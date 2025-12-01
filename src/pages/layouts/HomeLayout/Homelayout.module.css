@@ -1,0 +1,83 @@
+.home_page {
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: 0%;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+.bannerHeader {
+  height: 10%;
+  top: 0;
+  position: static;
+  background: linear-gradient(to right, #676464, #1a1714);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.bannerHeader_center {
+  flex: 1;
+  text-align: center;
+  font-size: 28px;
+  color: white;
+  font-weight: bold;
+}
+.bannerHeader_sign {
+  flex: 0;
+  position: absolute;
+  cursor: pointer;
+  right: 80px;
+}
+.signDownIcon {
+  font-size: 28px;
+  color: green;
+}
+.signUpIcon {
+  font-size: 28px;
+  color: red;
+}
+.signInBtn:hover,
+.signUpBtn:hover {
+  background: linear-gradient(to right, #737873, #5ff175);
+  cursor: pointer;
+  color: white;
+  border-radius: 5px;
+}
+.dropdown {
+  position: absolute;
+  right: 10px;
+  top: 60px;
+  background: linear-gradient(to right, #7c7b7b, #391e02);
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  width: 70px;
+}
+.layoutWrapper {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.frontPageHead {
+  font-style: italic;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.frontPageHead div {
+  font-size: 400%;
+  font-weight: 900;
+  top: 200px;
+  color: color-mix(in lab, #87daa4 50%, #1f4dcc 50%);
+  position: absolute;
+}
+.frontPageHead span {
+  font-weight: 300;
+  font-size: 100%;
+  font-weight: bold;
+  top: 300px;
+  position: absolute;
+   color: color-mix(in lab, #ed1616 50%, #e9290f 50%);
+}

@@ -1,0 +1,23 @@
+.btndiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.btndiv button {
+  padding: 8px 14px;
+  border: none;
+  background: #007bff;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btndiv button:nth-child(2) {
+  background: #666;
+}
+
+.btndiv button:hover {
+  opacity: 0.9;
+}
