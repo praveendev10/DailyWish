@@ -5,31 +5,25 @@ pipeline {
 
         stage('Frontend Build') {
             steps {
-                script {
-                    docker.image('node:20').inside {
-                        sh 'npm install'
-                        sh 'npm run build'
-                    }
+                dir('frontend') {
+                    sh 'npm install'
+                    sh 'npm run build'
                 }
             }
         }
 
         stage('Backend Build') {
             steps {
-                script {
-                    docker.image('node:20').inside {
-                        sh 'npm install'
-                    }
+                dir('backend') {
+                    sh 'npm install'
                 }
             }
         }
 
         stage('Run Backend') {
             steps {
-                script {
-                    docker.image('node:20').inside {
-                        sh 'node app.js'
-                    }
+                dir('backend') {
+                    sh 'node app.js'
                 }
             }
         }
