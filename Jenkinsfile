@@ -6,8 +6,8 @@ pipeline {
         stage('Frontend Build') {
             steps {
                 dir('frontend') {
-                    bat 'npm install'
-                    bat 'npm run build'
+                    sh 'npm install'
+                    sh 'npm run build'
                 }
             }
         }
@@ -15,7 +15,7 @@ pipeline {
         stage('Backend Build') {
             steps {
                 dir('backend') {
-                    bat 'npm install'
+                    sh 'npm install'
                 }
             }
         }
@@ -23,7 +23,8 @@ pipeline {
         stage('Run Backend') {
             steps {
                 dir('backend') {
-                    bat 'node app.js'
+                    // Run backend in background to prevent Jenkins from hanging
+                    sh 'nohup node app.js &'
                 }
             }
         }
