@@ -2,16 +2,10 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout Code') {
-            steps {
-                checkout scm
-            }
-        }
 
         stage('Frontend Build') {
             steps {
-                dir('frontend') {
-                    // Use Node 20 container for build
+                script {
                     docker.image('node:20').inside {
                         sh 'npm install'
                         sh 'npm run build'
@@ -22,7 +16,7 @@ pipeline {
 
         stage('Backend Build') {
             steps {
-                dir('backend') {
+                script {
                     docker.image('node:20').inside {
                         sh 'npm install'
                     }
@@ -32,7 +26,7 @@ pipeline {
 
         stage('Run Backend') {
             steps {
-                dir('backend') {
+                script {
                     docker.image('node:20').inside {
                         sh 'node app.js'
                     }
