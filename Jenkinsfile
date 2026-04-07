@@ -2,12 +2,20 @@ pipeline {
     agent any
 
     stages {
+        stage('Checkout Code') {
+            steps {
+                checkout scm
+            }
+        }
 
         stage('Frontend Build') {
             steps {
                 dir('frontend') {
-                    sh 'npm install'
-                    sh 'npm run build'
+                    // Use Node 20 container for build
+                    docker.image('node:20').inside {
+                        sh 'npm install'
+                        sh 'npm run build'
+                    }
                 }
             }
         }
@@ -15,7 +23,9 @@ pipeline {
         stage('Backend Build') {
             steps {
                 dir('backend') {
-                    sh 'npm install'
+                    docker.image('node:20').inside {
+                        sh 'npm install'
+                    }
                 }
             }
         }
@@ -23,8 +33,9 @@ pipeline {
         stage('Run Backend') {
             steps {
                 dir('backend') {
-                    // Run backend in background to prevent Jenkins from hanging
-                    sh 'nohup node app.js &'
+                    docker.image('node:20').inside {
+                        sh 'node app.js'
+                    }
                 }
             }
         }
