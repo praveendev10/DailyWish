@@ -1,0 +1,39 @@
+.loginUserdiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  gap:14px;
+  width: 320px;
+  padding: 25px;
+  width: 300px;
+  margin: auto;
+  border-radius: 10px;
+}
+.userNamediv, .userIddiv,
+.passworddiv {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.userNamediv input, .userIddiv input,
+.passworddiv input {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+}
+.userNamediv input:focus,
+.userIddiv input:focus,
+.passworddiv input:focus {
+  border-color: #007bff;
+}
+.newUser {
+  font-size: 14px;
+  color: #007bff;
+  cursor: pointer;
+}
