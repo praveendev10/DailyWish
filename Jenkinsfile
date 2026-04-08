@@ -1,31 +1,25 @@
 pipeline {
-    agent any
+  agent any
 
-    stages {
+  stages {
 
-        // stage('Frontend Build') {
-        //     steps {
-        //         dir('frontend') {
-        //             sh 'npm install'
-        //             sh 'npm run build'
-        //         }
-        //     }
-        // }
-
-        stage('Backend Build') {
-            steps {
-                dir('backend') {
-                    sh 'npm install'
-                }
-            }
-        }
-
-        stage('Run Backend') {
-            steps {
-                dir('backend') {
-                    sh 'node app.js'
-                }
-            }
-        }
+    stage('Check Files') {
+      steps {
+        sh 'ls -la'
+      }
     }
+
+    stage('Install') {
+      steps {
+        sh 'npm install'
+      }
+    }
+
+    stage('Run App') {
+      steps {
+        sh 'node index.js'
+      }
+    }
+
+  }
 }
