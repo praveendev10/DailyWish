@@ -1,6 +1,6 @@
 import { useState } from "react";
 import banner from "../../../assets/images/banner.jpg";
-import styles from "./homelayout.module.css";
+import styles from "./Homelayout.module.css";
 import { FiChevronDown } from "react-icons/fi";
 import { FiChevronUp } from "react-icons/fi";
 import { useLocation, useNavigate } from "react-router-dom";
