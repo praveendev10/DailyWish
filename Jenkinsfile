@@ -23,7 +23,7 @@ pipeline {
     stage('Run Backend') {
       steps {
         dir('Backend') {
-          sh 'npx ts-node index.ts'
+          sh 'npx ts-node src/index.ts'
         }
       }
     }
