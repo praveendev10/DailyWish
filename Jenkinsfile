@@ -3,14 +3,14 @@ pipeline {
 
     stages {
 
-        stage('Frontend Build') {
-            steps {
-                dir('frontend') {
-                    sh 'npm install'
-                    sh 'npm run build'
-                }
-            }
-        }
+        // stage('Frontend Build') {
+        //     steps {
+        //         dir('frontend') {
+        //             sh 'npm install'
+        //             sh 'npm run build'
+        //         }
+        //     }
+        // }
 
         stage('Backend Build') {
             steps {
