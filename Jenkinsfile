@@ -20,13 +20,13 @@ pipeline {
       }
     }
 
-    stage('Run Backend') {
-      steps {
-        dir('Backend') {
-          sh 'npx ts-node src/index.ts'
-        }
-      }
-    }
+    // stage('Run Backend') {
+    //   steps {
+    //     dir('Backend') {
+    //       sh 'npx ts-node src/index.ts'
+    //     }
+    //   }
+    // }
 
   }
 }
