@@ -3,21 +3,28 @@ pipeline {
 
   stages {
 
-    stage('Check Files') {
+    stage('Frontend Build') {
       steps {
-        sh 'ls -la'
+        dir('Frontend') {
+          sh 'npm install'
+          sh 'npm run build'
+        }
       }
     }
 
-    stage('Install') {
+    stage('Backend Build') {
       steps {
-        sh 'npm install'
+        dir('Backend') {
+          sh 'npm install'
+        }
       }
     }
 
-    stage('Run App') {
+    stage('Run Backend') {
       steps {
-        sh 'node index.js'
+        dir('Backend') {
+          sh 'node index.js'
+        }
       }
     }
 
